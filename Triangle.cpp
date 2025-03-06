@@ -20,7 +20,7 @@ void Triangle(int a, int b, int c) {
 	int choice;
 	bool pr = Isosb(a, b, c);
 	cin >> choice;
-	int perim = a + b + c;
+	double perim = a + b + c;
 	double sq = sqrt(perim / 2 * (perim / 2 - a) * (perim / 2 - b) * (perim / 2 - c));
 	Operation ch = static_cast<Operation>(choice);
 	switch (ch) {

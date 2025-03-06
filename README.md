@@ -1,3 +1,1 @@
-Hello
-World
-I am chempik
+Выполняю задание с треугольником

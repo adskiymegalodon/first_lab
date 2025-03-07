@@ -49,20 +49,13 @@ void Triangle(int a, int b, int c) {
 		break;
 	}
 };
+//superklass
 int main() {
 	setlocale(LC_ALL, "Rus");
-	int a, b, c;
-	cout << "Storoni???" << endl;
+	int a , b, c ;
 	cin >> a;
 	cin >> b;
 	cin >> c;
-	if (a<=0 || b<=0 || c<=0 || a+b<=c || a+c <=b || c+b<=a)
-	{
-		cout << "WHAT??" << endl;
-	}
-	else {
-		Triangle(a, b, c);
-	}
-
+	Triangle(a, b, c);
 	return 0;
 }

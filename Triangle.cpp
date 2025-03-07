@@ -51,7 +51,18 @@ void Triangle(int a, int b, int c) {
 };
 int main() {
 	setlocale(LC_ALL, "Rus");
-	int a = 6, b = 6, c = 7;
-	Triangle(a, b, c);
+	int a, b, c;
+	cout << "Storoni???" << endl;
+	cin >> a;
+	cin >> b;
+	cin >> c;
+	if (a<=0 || b<=0 || c<=0 || a+b<=c || a+c <=b || c+b<=a)
+	{
+		cout << "WHAT??" << endl;
+	}
+	else {
+		Triangle(a, b, c);
+	}
+
 	return 0;
 }

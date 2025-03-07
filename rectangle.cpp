@@ -10,7 +10,7 @@ int main() {
     cin >> length;
     cout << "Введите ширину прямоугольника: ";
     cin >> width;
-
+    
     int choice;
     do {
         cout << "\nМеню вычислений:\n";

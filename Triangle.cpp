@@ -49,9 +49,13 @@ void Triangle(int a, int b, int c) {
 		break;
 	}
 };
+//superklass
 int main() {
 	setlocale(LC_ALL, "Rus");
-	int a = 6, b = 6, c = 7;
+	int a , b, c ;
+	cin >> a;
+	cin >> b;
+	cin >> c;
 	Triangle(a, b, c);
 	return 0;
 }

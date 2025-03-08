@@ -41,4 +41,4 @@ int main() {
     cout << "Площадь кругового сектора: " << sectorArea(radius, angle) << endl;
 
     return 0;
-}
+}/////

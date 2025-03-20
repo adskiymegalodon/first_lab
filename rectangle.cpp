@@ -1,43 +1,76 @@
 #include <iostream>
 #include <cmath>
+#include <stdexcept>
 
-using namespace std;
+class Rectangle {
+private:
+    double length;
+    double width;
+
+    void validateDimensions(double value) const {
+        if (value <= 0) {
+            throw std::invalid_argument("Dimensions must be positive numbers");
+        }
+    }
+
+public:
+
+    Rectangle(double l, double w) : length(l), width(w) {
+        validateDimensions(l);
+        validateDimensions(w);
+    }
+
+    void setLength(double l) {
+        validateDimensions(l);
+        length = l;
+    }
+
+    void setWidth(double w) {
+        validateDimensions(w);
+        width = w;
+    }
+
+    double getLength() const { return length; }
+    double getWidth() const { return width; }
+
+    double perimeter() const {
+        return 2 * (length + width);
+    }
+
+    double area() const {
+        return length * width;
+    }
+
+    double diagonal() const {
+        return sqrt(length * length + width * width);
+    }
+
+    void printInfo() const {
+        std::cout << "Rectangle info:\n"
+            << "Length: " << length << "\n"
+            << "Width: " << width << "\n"
+            << "Perimeter: " << perimeter() << "\n"
+            << "Area: " << area() << "\n"
+            << "Diagonal: " << diagonal() << "\n";
+    }
+};
 
 int main() {
-    setlocale(LC_ALL, "Russian");
-    double length, width;
-    cout << "Введите длину прямоугольника: ";
-    cin >> length;
-    cout << "Введите ширину прямоугольника: ";
-    cin >> width;
-    
-    int choice;
-    do {
-        cout << "\nМеню вычислений:\n";
-        cout << "1. Периметр прямоугольника\n";
-        cout << "2. Площадь прямоугольника\n";
-        cout << "3. Длина диагонали\n";
-        cout << "4. Выход\n";
-        cout << "Выберите действие (1-4): ";
-        cin >> choice;
+    try {
+        double l, w;
+        std::cout << "Enter rectangle length: ";
+        std::cin >> l;
+        std::cout << "Enter rectangle width: ";
+        std::cin >> w;
 
-        switch (choice) {
-        case 1:
-            cout << "Периметр: " << 2 * (length + width) << endl;
-            break;
-        case 2:
-            cout << "Площадь: " << length * width << endl;
-            break;
-        case 3:
-            cout << "Длина диагонали: " << sqrt(length * length + width * width) << endl;
-            break;
-        case 4:
-            cout << "Программа завершена." << endl;
-            break;
-        default:
-            cout << "Ошибка: введите число от 1 до 4!" << endl;
-        }
-    } while (choice != 4);
+        Rectangle rect(l, w);
+        rect.printInfo();
+
+    }
+    catch (const std::invalid_argument& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+        return 1;
+    }
 
     return 0;
 }

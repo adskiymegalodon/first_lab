@@ -38,7 +38,7 @@ int main() {
     Rectangle rect(len, wid);
     cout << "\nРезультаты расчетов:\n";
     cout << "Периметр: " << rect.perimeter() << endl;
-    cout << "Площадь: " << rect.area() << endl;
+    cout << "Площадь: " << rect.area() << endl; 
     cout << "Диагональ: " << rect.diagonal() << endl;
     return 0;
 }
